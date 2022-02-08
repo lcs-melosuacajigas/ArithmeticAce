@@ -17,6 +17,9 @@ struct ContentView: View {
     @State var inputGiven = ""
     
     //MARK: Computed properties
+    var correctAnswer: Int {
+        return multiplicand * multiplier
+    }
     var body: some View {
         VStack(spacing: 0){
             
@@ -35,6 +38,8 @@ struct ContentView: View {
             Divider()
             
             HStack {
+               
+                
                 Image(systemName: "Checkmark.circle")
                     .foregroundColor(.green)
                 
@@ -47,6 +52,7 @@ struct ContentView: View {
             Button {
                 //Check the answer
             } label: {
+                guard let answerGiven = Int (inputGiven) else {
                 // Label
                 Text("Check answer")
             }
