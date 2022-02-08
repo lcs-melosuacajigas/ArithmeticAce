@@ -16,6 +16,9 @@ struct ContentView: View {
     // Holds the user's input
     @State var inputGiven = ""
     
+    @State var answerProvided = false
+    @State var answerIsCorrect = false
+    
     //MARK: Computed properties
     var correctAnswer: Int {
         return multiplicand * multiplier
@@ -42,17 +45,20 @@ struct ContentView: View {
                 
                 Image(systemName: "Checkmark.circle")
                     .foregroundColor(.green)
+                // Only show when the answer is correct
+                    .opacity(answer)
                 
                 Spacer()
                 
                 TextField("",
                           text: $inputGiven)
                     .multilineTextAlignment(.trailing)
+                answerProvided = true
+                answerProvided = false
             }
             Button {
                 //Check the answer
             } label: {
-                guard let answerGiven = Int (inputGiven) else {
                 // Label
                 Text("Check answer")
             }
