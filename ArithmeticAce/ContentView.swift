@@ -9,24 +9,35 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        HStack {
-            Text("x")
-            
-            Spacer()
-            VStack {
-                Text("5")
-                Text("6")
+        VStack {
+            HStack {
+                Text("x")
                 
+                Spacer()
                 
+                VStack {
+                    Text("5")
+                    Text("6")
+                }
             }
+           
             
+            Divider()
             
+            HStack {
+                Image(systemName: "Checkmark.circle")
+                
+                Spacer()
+                Text("30")
+            }
         }
         .font(.largeTitle)
-        
+        .padding()
     }
-}
+            
+        }
+        
+       
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -34,5 +45,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
 
